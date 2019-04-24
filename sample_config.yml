@@ -1,0 +1,13 @@
+smtp:
+  domain: my-domain-name.ch
+  server: 127.0.0.1
+  port: 25
+
+# Minimum size of group is 3
+group_size: 5
+
+files:
+  victim: D:\prank-campaign\list_of_victim.txt
+
+folder:
+  message: D:\prank-campaign\messages

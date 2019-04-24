@@ -1,0 +1,12 @@
+smtp:
+  domain: prank.ch
+  server: 127.0.0.1
+  port: 2525
+
+group_size: 4
+
+files:
+  victim: D:\_PERSO\DEV_JAVA\prank-campaign\src\main\resources\list_of_victim.txt
+
+folder:
+  message: D:\_PERSO\DEV_JAVA\prank-campaign\src\main\resources\messages
