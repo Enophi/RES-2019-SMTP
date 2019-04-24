@@ -1,3 +1,4 @@
+# SMTP configuration
 smtp:
   domain: my-domain-name.ch
   server: 127.0.0.1
@@ -6,8 +7,10 @@ smtp:
 # Minimum size of group is 3
 group_size: 5
 
+# The list of victims. One at a line
 files:
   victim: D:\prank-campaign\list_of_victim.txt
 
+# A file per message. The name of the file will be use as the email subject
 folder:
   message: D:\prank-campaign\messages
