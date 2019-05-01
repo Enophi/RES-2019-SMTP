@@ -1,5 +1,6 @@
 # Prank Campaign generator 1.0
 ## Description
+This project allows you to generate a prank campaign in a fully automatic way.
 
 ## Setting up the SMTP Server
 You can use a mock smtp server to test this software. A mock service fake the behaviour of the real service.
@@ -16,3 +17,6 @@ and the start the container. The image expose two ports. 25 for smtp protocol an
 4. Run the app ```java -jar prank-campaign-1.0-SNAPSHOT.jar```
 
 ## Implementation
+The smtp client implements the state pattern. This ensures that the client (as user) correctly use the API.
+
+![Class diagramm](images/uml.png)
