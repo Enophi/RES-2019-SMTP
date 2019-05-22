@@ -22,7 +22,7 @@ public class SecondState extends SMTPState {
     public void setSender(String sender) throws IOException {
         System.out.println(String.format("[SENDING] MAIL FROM:%s", sender));
 
-        _out.println(String.format("MAIL FROM: %s", sender));
+        _out.printf(String.format("MAIL FROM: %s\r\n", sender));
         _lastStatus = extractResponseCode(_in.readLine());
 
         if (_lastStatus.equals(RFC_OK))

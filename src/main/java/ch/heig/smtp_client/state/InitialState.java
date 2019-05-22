@@ -29,10 +29,10 @@ public class InitialState extends SMTPState {
 
     @Override
     public void setDomain(String domain) throws IOException {
-        System.out.println(String.format("[SENDING] EHLO %s", domain));
 
         // Send command to the server
-        _out.println(String.format("EHLO %s", domain));
+        _out.printf(String.format("EHLO %s\r\n", domain));
+        System.out.println(String.format("[SENDING] EHLO %s", domain));
 
         // TODO Check the response with more efficiency
         _lastStatus = extractResponseCode(_in.readLine());

@@ -28,7 +28,7 @@ public class ThirdState extends SMTPState {
     public void setRecipient(String recipient) {
         System.out.println(String.format("[SENDING] RCPT TO: %s", recipient));
 
-        _out.println(String.format("RCPT TO:%s", recipient));
+        _out.printf(String.format("RCPT TO:%s\r\n", recipient));
         try {
             String response = _in.readLine();
             System.out.println(response);

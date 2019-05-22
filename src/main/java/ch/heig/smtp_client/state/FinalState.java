@@ -29,14 +29,14 @@ public class FinalState extends SMTPState {
     @Override
     public void setData(String subject, String data) {
         System.out.println("[SENDING] DATA");
-        _out.println("DATA");
+        _out.printf("DATA\r\n");
         try {
             String response = _in.readLine();
             System.out.println(response);
             _lastStatus = extractResponseCode(response);
             if (_lastStatus.equals(SMTPState.RFC_START_MAIL)) {
-                _out.println(String.format("subject:%s\n", subject));
-                _out.println(data);
+                _out.printf(String.format("subject:%s\r\n", subject));
+                _out.printf(data + "\r\n");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -48,11 +48,11 @@ public class FinalState extends SMTPState {
         if (!_lastStatus.equals(RFC_START_MAIL))
             throw new IncorrectCommandException("You have to set some data before send. Use setData(String subject, String data) first");
 
-        _out.println("\r\n.\r\n");
+        _out.printf("\r\n.\r\n");
         try {
             _lastStatus = extractResponseCode(_in.readLine());
             if (_lastStatus.equals(RFC_OK)) {
-                _out.println("QUIT");
+                _out.printf("QUIT\r\n");
                 _out.close();
                 _in.close();
             }
